@@ -1,0 +1,39 @@
+.checkbox {
+}
+
+.checkbox__select {
+  position: relative;
+  overflow: hidden;
+  min-width: 10.76rem;
+  width: fit-content;
+  height: 2.1875rem;
+  padding: 0 1rem;
+  cursor: pointer;
+  background-color: #fff;
+  border: 2px solid #dddddd;
+  border-radius: 2px;
+}
+
+.checkbox__select-element {
+  position: absolute;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip-path: inset(50%);
+}
+
+.checkbox__select-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.checkbox__select-title-icon {
+  display: block;
+  width: 11.24px;
+  height: 6.42px;
+}
+
+.checkbox__label {
+}
