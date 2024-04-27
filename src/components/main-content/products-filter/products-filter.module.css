@@ -1,3 +1,11 @@
+.product-filter-title {
+  color: #0e2f54;
+  font-size: 1.5625rem;
+  letter-spacing: 0px;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .product-filter-container {
   display: flex;
   gap: 1.48rem;

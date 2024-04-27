@@ -47,7 +47,7 @@ export const fundData = [
     fund_name: 'Dow Jones Internet UCITS ETF',
     primary_ticker: 'FDNE',
     income_treatment: 'CBRS',
-    share_class_currency: '',
+    share_class_currency: 'EUR',
     ISN: 'IE00BG0SSC32',
     strategy: 'Thematic',
     asset_class: 'Equity',

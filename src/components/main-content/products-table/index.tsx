@@ -36,14 +36,14 @@ const ProductsTable = ({ fundData }: { fundData: FundData }) => {
           ))}
         </tr>
       </thead>
-      <tbody className={style.table__body}>
+      <tbody>
         {fundData.map((fund, index) => (
           <tr className={style.table__row} key={index}>
             {tableHeaders.map((header, cellIndex) => (
               <td
-                className={`${style['table__row-item']} ${
-                  cellIndex === 3 ? style['border-right-body'] : ''
-                }`}
+                className={`${style['table__row-item']} 
+                ${cellIndex === 3 ? style['border-right-body'] : ''}
+                `}
                 key={`${index}-${cellIndex}`}
               >
                 {fund[header as keyof typeof fund]}
