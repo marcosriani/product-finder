@@ -1,7 +1,8 @@
 import { ChangeEvent, useState } from 'react';
 import styles from './search.module.css';
+import { SearchProps } from '../../../types/common';
 
-const Search = ({ onSearch }: { onSearch: (searchTerm: string) => void }) => {
+const Search = ({ onSearch }: SearchProps) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleSearch = (event: ChangeEvent<HTMLInputElement>) => {

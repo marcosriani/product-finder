@@ -8,10 +8,11 @@ const MainContent = () => {
   const [fundData, setFundData] = useState(mockedFundData);
 
   const handleSearch = (searchTerm: string) => {
-    const filteredData = mockedFundData.filter((fund) =>
-      fund.fund_name.toLowerCase().includes(searchTerm.toLowerCase())
+    setFundData(
+      mockedFundData.filter((fund) =>
+        fund.fund_name.toLowerCase().includes(searchTerm.toLowerCase())
+      )
     );
-    setFundData(filteredData);
   };
 
   return (

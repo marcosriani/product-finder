@@ -1,27 +1,9 @@
 import { nanoid } from 'nanoid';
 import styles from './checkbox.module.css';
 import React from 'react';
+import { FilterOptionsProps } from '../../../types/common';
 
-type FilterOptions = {
-  [key: string]:
-    | {
-        value: string;
-        label: string;
-        options?: { value: string; label: string }[];
-      }[]
-    | {
-        group: string;
-        options: {
-          value: string;
-          label: string;
-          options?: { value: string; label: string }[];
-        }[];
-      }[];
-};
-
-const Checkbox = ({ filterOptions }: { filterOptions: FilterOptions }) => {
-  console.log(filterOptions);
-
+const Checkbox = ({ filterOptions }: { filterOptions: FilterOptionsProps }) => {
   return (
     <>
       {/* Looping over an array of keys of the object ['strategy', 'asset class', ...] */}

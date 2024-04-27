@@ -1,18 +1,7 @@
-type FundData = {
-  fund_name: string;
-  primary_ticker: string;
-  income_treatment: string;
-  share_class_currency: string;
-  ISN: string;
-  strategy: string;
-  asset_class: string;
-  region: string;
-  style: string;
-}[];
-
+import { FundDataProps } from '../../../types/common';
 import style from './products-table.module.css';
 
-const ProductsTable = ({ fundData }: { fundData: FundData }) => {
+const ProductsTable = ({ fundData }: { fundData: FundDataProps }) => {
   console.log(fundData);
 
   // Get the keys from the first object in the fundData array
