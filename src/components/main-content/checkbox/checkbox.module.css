@@ -10,8 +10,9 @@
   padding: 0 1rem;
   cursor: pointer;
   background-color: #fff;
-  border: 2px solid #dddddd;
+  border: 1px solid #ddd;
   border-radius: 2px;
+  text-transform: capitalize;
 }
 
 .checkbox__select-element {
@@ -35,5 +36,34 @@
   height: 6.42px;
 }
 
-.checkbox__label {
+.checkbox-options {
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0px 8px 10px #00000024;
+  border: 1px solid #ddd;
+  padding: 0.625rem 0.875rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.9375rem;
+}
+
+.checkbox-options__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.9375rem;
+}
+
+.checkbox-options__item-title {
+  font: normal normal medium 15px/19px Roboto;
+  letter-spacing: 0px;
+  color: #003057;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.checkbox-options__item-label {
+  display: flex;
+  gap: 5px;
 }

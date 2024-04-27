@@ -11,11 +11,21 @@ const filterOptions = {
     { value: 'esg', label: 'ESG' },
   ],
   'asset class': [
-    { value: 'all-cap', label: 'All Cap' },
-    { value: 'large-cap', label: 'Large Cap' },
-    { value: 'small-cap', label: 'Small Cap' },
-    { value: 'government', label: 'Government' },
-    { value: 'currency', label: 'Currency' },
+    {
+      group: 'equity',
+      options: [
+        { value: 'all-cap', label: 'All Cap' },
+        { value: 'large-cap', label: 'Large Cap' },
+        { value: 'small-cap', label: 'Small Cap' },
+      ],
+    },
+    {
+      group: 'fixed income',
+      options: [
+        { value: 'government', label: 'Government' },
+        { value: 'currency', label: 'Currency' },
+      ],
+    },
   ],
   'market & region': [
     {
@@ -29,11 +39,16 @@ const filterOptions = {
       group: 'region',
       options: [
         { value: 'asia-pacific', label: 'Asia Pacific' },
-        { value: 'europe', label: 'Europe' },
-        { value: 'eurozone', label: 'Eurozone' },
-        { value: 'germany', label: 'Germany' },
-        { value: 'switzerland', label: 'Switzerland' },
-        { value: 'united-kingdom', label: 'United Kingdom' },
+        {
+          value: 'europe',
+          label: 'Europe',
+          options: [
+            { value: 'eurozone', label: 'Eurozone' },
+            { value: 'germany', label: 'Germany' },
+            { value: 'switzerland', label: 'Switzerland' },
+            { value: 'united-kingdom', label: 'United Kingdom' },
+          ],
+        },
         { value: 'global', label: 'Global' },
         { value: 'north-america', label: 'North America' },
         { value: 'united-states', label: 'United States' },

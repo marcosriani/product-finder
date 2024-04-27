@@ -1,0 +1,39 @@
+.table {
+  text-transform: capitalize;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background: #fff;
+}
+
+.table__header {
+  color: #fff;
+  text-align: left;
+}
+
+.table__body {
+}
+
+.table__row {
+  height: 50px;
+}
+
+.table__row-item {
+  padding: 0 1rem;
+  border-bottom: 1px solid rgb(230, 229, 229);
+}
+
+.table__row-item-head-right {
+  background-color: #345777;
+}
+
+.table__row-item-head-left {
+  background-color: #073156;
+}
+
+.border-right-header {
+  border-right: 1px solid rgb(108 108 121);
+}
+
+.border-right-body {
+  border-right: 1px solid rgb(230, 229, 229);
+}
