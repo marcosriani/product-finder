@@ -1,9 +1,13 @@
 import { nanoid } from 'nanoid';
 import styles from './checkbox.module.css';
 import React from 'react';
-import { FilterOptionsProps } from '../../../types/common';
+import { CheckboxProps } from '../../../types/common';
 
-const Checkbox = ({ filterOptions }: { filterOptions: FilterOptionsProps }) => {
+const Checkbox = ({
+  filterOptions,
+  selectedOptions,
+  selectedOptionsHandler,
+}: CheckboxProps) => {
   return (
     <>
       {/* Looping over an array of keys of the object ['strategy', 'asset class', ...] */}
@@ -55,6 +59,8 @@ const Checkbox = ({ filterOptions }: { filterOptions: FilterOptionsProps }) => {
                               id={`${checkboxId}-${index}`}
                               name={option.value}
                               value={option.value}
+                              checked={selectedOptions.includes(option.value)}
+                              onChange={selectedOptionsHandler}
                             />
                             <label htmlFor={`${checkboxId}-${index}`}>
                               {option.label}
@@ -73,6 +79,10 @@ const Checkbox = ({ filterOptions }: { filterOptions: FilterOptionsProps }) => {
                                       id={`${checkboxId}-innerOption-${index}`}
                                       name={innerOption.value}
                                       value={innerOption.value}
+                                      checked={selectedOptions.includes(
+                                        innerOption.value
+                                      )}
+                                      onChange={selectedOptionsHandler}
                                     />
                                     <label
                                       htmlFor={`${checkboxId}-innerOption-${index}`}
@@ -98,6 +108,8 @@ const Checkbox = ({ filterOptions }: { filterOptions: FilterOptionsProps }) => {
                           id={checkboxId}
                           name={item.value}
                           value={item.value}
+                          checked={selectedOptions.includes(item.value)}
+                          onChange={selectedOptionsHandler}
                         />
                         <label
                           className={styles['checkbox__label']}
@@ -118,6 +130,10 @@ const Checkbox = ({ filterOptions }: { filterOptions: FilterOptionsProps }) => {
                                   id={`${checkboxId}-innerOption-${index}`}
                                   name={innerOption.value}
                                   value={innerOption.value}
+                                  checked={selectedOptions.includes(
+                                    innerOption.value
+                                  )}
+                                  onChange={selectedOptionsHandler}
                                 />
                                 <label
                                   className={styles['checkbox__label']}

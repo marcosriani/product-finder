@@ -2,8 +2,6 @@ import { FundDataProps } from '../../../types/common';
 import style from './products-table.module.css';
 
 const ProductsTable = ({ fundData }: { fundData: FundDataProps }) => {
-  console.log(fundData);
-
   // Get the keys from the first object in the fundData array
   const tableHeaders = fundData.length > 0 ? Object.keys(fundData[0]) : [];
 
