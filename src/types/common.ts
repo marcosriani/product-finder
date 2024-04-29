@@ -6,16 +6,29 @@ export type FilterOptionsProps = {
         id: string;
         value: string;
         label: string;
-        options?: { id: string; value: string; label: string }[];
+        tags?: string[];
+        options?: {
+          id: string;
+          value: string;
+          label: string;
+          tags?: string[];
+        }[];
       }[]
     | {
         id: string;
         group: string;
+        tags?: string[];
         options: {
           id: string;
           value: string;
           label: string;
-          options?: { id: string; value: string; label: string }[];
+          tags?: string[];
+          options?: {
+            id: string;
+            value: string;
+            label: string;
+            tags?: string[];
+          }[];
         }[];
       }[];
 };
