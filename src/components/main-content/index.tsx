@@ -7,13 +7,10 @@ import ProductsTable from './products-table';
 const MainContent = () => {
   const [fundData, setFundData] = useState(mockedFundData);
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
+  const [searchTerm, setSearchTerm] = useState('');
 
-  const handleSearch = (searchTerm: string) => {
-    setFundData(
-      mockedFundData.filter((fund) =>
-        fund.fund_name.toLowerCase().includes(searchTerm.toLowerCase())
-      )
-    );
+  const handleSearch = (term: string) => {
+    setSearchTerm(term);
   };
 
   const selectedOptionsHandler = (event: ChangeEvent<HTMLInputElement>) => {
@@ -29,8 +26,14 @@ const MainContent = () => {
   useEffect(() => {
     let filteredData = mockedFundData;
 
+    if (searchTerm.trim() !== '') {
+      filteredData = mockedFundData.filter((fund) =>
+        fund.fund_name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+
     if (selectedOptions.length > 0) {
-      filteredData = mockedFundData.filter((fund) => {
+      filteredData = filteredData.filter((fund) => {
         return selectedOptions.every((option) =>
           Object.values(fund).some(
             (value) => value.toString().toLowerCase() === option.toLowerCase()
@@ -40,7 +43,7 @@ const MainContent = () => {
     }
 
     setFundData(filteredData);
-  }, [selectedOptions]);
+  }, [searchTerm, selectedOptions]);
 
   return (
     <div className={styles['main-content']}>
@@ -52,7 +55,11 @@ const MainContent = () => {
         />
       </section>
       <section className={styles['main-content__section-body']}>
-        <ProductsTable fundData={fundData} />
+        {fundData.length > 0 ? (
+          <ProductsTable fundData={fundData} />
+        ) : (
+          <p>Sorry! no funds found. Please try a different search.</p>
+        )}
       </section>
     </div>
   );

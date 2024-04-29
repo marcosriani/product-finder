@@ -49,34 +49,36 @@ const Checkbox = ({
                         {item.group}
                       </p>
 
-                      {item.options.map((option, index) => (
-                        <div key={`${checkboxId}-group-${index}`}>
+                      {item.options.map((option) => (
+                        <div key={option.id}>
                           <div
                             className={styles['checkbox-options__item-label']}
                           >
                             <input
                               type="checkbox"
-                              id={`${checkboxId}-${index}`}
+                              id={option.id}
                               name={option.value}
                               value={option.value}
                               checked={selectedOptions.includes(option.value)}
                               onChange={selectedOptionsHandler}
                             />
-                            <label htmlFor={`${checkboxId}-${index}`}>
-                              {option.label}
-                            </label>
+                            <label htmlFor={option.id}>{option.label}</label>
                           </div>
 
                           {option.options && (
                             <div>
-                              {option.options.map((innerOption, index) => (
-                                <React.Fragment
-                                  key={`${checkboxId}-group-${index}`}
-                                >
-                                  <div>
+                              {option.options.map((innerOption) => (
+                                <React.Fragment key={innerOption.id}>
+                                  <div
+                                    className={
+                                      styles[
+                                        'checkbox-options__item-label-nested-items'
+                                      ]
+                                    }
+                                  >
                                     <input
                                       type="checkbox"
-                                      id={`${checkboxId}-innerOption-${index}`}
+                                      id={innerOption.id}
                                       name={innerOption.value}
                                       value={innerOption.value}
                                       checked={selectedOptions.includes(
@@ -84,9 +86,7 @@ const Checkbox = ({
                                       )}
                                       onChange={selectedOptionsHandler}
                                     />
-                                    <label
-                                      htmlFor={`${checkboxId}-innerOption-${index}`}
-                                    >
+                                    <label htmlFor={innerOption.id}>
                                       {innerOption.label}
                                     </label>
                                   </div>
@@ -101,11 +101,11 @@ const Checkbox = ({
                 } else {
                   // Handle the case when item is a simple option
                   return (
-                    <div key={`${checkboxId}-no-group`}>
+                    <div key={item.id}>
                       <div className={styles['checkbox-options__item-label']}>
                         <input
                           type="checkbox"
-                          id={checkboxId}
+                          id={item.id}
                           name={item.value}
                           value={item.value}
                           checked={selectedOptions.includes(item.value)}
@@ -113,21 +113,19 @@ const Checkbox = ({
                         />
                         <label
                           className={styles['checkbox__label']}
-                          htmlFor={checkboxId}
+                          htmlFor={item.id}
                         >
                           {item.label}
                         </label>
                       </div>
                       {item.options && (
                         <div>
-                          {item.options.map((innerOption, index) => (
-                            <React.Fragment
-                              key={`${checkboxId}-innerOption-${index}`}
-                            >
+                          {item.options.map((innerOption) => (
+                            <React.Fragment key={innerOption.id}>
                               <div>
                                 <input
                                   type="checkbox"
-                                  id={`${checkboxId}-innerOption-${index}`}
+                                  id={innerOption.id}
                                   name={innerOption.value}
                                   value={innerOption.value}
                                   checked={selectedOptions.includes(
@@ -137,7 +135,7 @@ const Checkbox = ({
                                 />
                                 <label
                                   className={styles['checkbox__label']}
-                                  htmlFor={`${checkboxId}-innerOption-${index}`}
+                                  htmlFor={innerOption.id}
                                 >
                                   {innerOption.label}
                                 </label>

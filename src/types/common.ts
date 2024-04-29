@@ -3,16 +3,19 @@ import { ChangeEvent } from 'react';
 export type FilterOptionsProps = {
   [key: string]:
     | {
+        id: string;
         value: string;
         label: string;
-        options?: { value: string; label: string }[];
+        options?: { id: string; value: string; label: string }[];
       }[]
     | {
+        id: string;
         group: string;
         options: {
+          id: string;
           value: string;
           label: string;
-          options?: { value: string; label: string }[];
+          options?: { id: string; value: string; label: string }[];
         }[];
       }[];
 };
