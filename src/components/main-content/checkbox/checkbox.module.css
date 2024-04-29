@@ -1,5 +1,6 @@
 .checkbox {
   position: relative;
+  font-family: 'Maven Pro', sans-serif;
 }
 
 .checkbox__select {
@@ -24,6 +25,10 @@
   clip-path: inset(50%);
 }
 
+.checkbox__select:has(> .checkbox__select-element:focus) {
+  outline: 2px solid rgb(99, 99, 231);
+}
+
 .checkbox__select-title {
   display: flex;
   align-items: center;
@@ -35,10 +40,16 @@
   display: block;
   width: 11.24px;
   height: 6.42px;
+  transition: transform 0.2s ease-in-out;
 }
 
+.checkbox__select:has(> .checkbox__select-element:focus) + .checkbox-options,
 .checkbox__select:hover + .checkbox-options {
   display: flex;
+}
+
+.checkbox__select:hover .checkbox__select-title-icon {
+  transform: rotate(180deg);
 }
 
 .checkbox-options {

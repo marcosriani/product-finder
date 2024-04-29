@@ -29,7 +29,9 @@ const ProductsTable = ({ fundData }: { fundData: FundDataProps }) => {
             {tableHeaders.map((header, cellIndex) => (
               <td
                 className={`${style['table__row-item']} 
-                ${cellIndex === 3 ? style['border-right-body'] : ''}
+                ${cellIndex === 3 ? style['border-right-body'] : ''} ${
+                  cellIndex > 0 ? style['table__row-item-center'] : ''
+                }
                 `}
                 key={`${index}-${cellIndex}`}
               >

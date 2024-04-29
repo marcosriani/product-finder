@@ -3,6 +3,7 @@
   min-height: 288px;
   color: #fff;
   padding: 2.93rem 0.95rem 1.8rem 0.95rem;
+  font-family: 'Maven Pro', sans-serif;
 }
 .footer__inner-container {
   max-width: 1400px;
@@ -33,6 +34,9 @@
 
 .footer__inner-container-paragraph {
   max-width: 80%;
+  letter-spacing: -0.14px;
+  font-weight: 300;
+  font-size: 0.875rem;
 }
 
 .footer__inner-container-list {
@@ -40,6 +44,8 @@
   align-items: center;
   gap: 0.93rem;
   flex-wrap: wrap;
+  letter-spacing: 0px;
+  font-size: 1rem;
 }
 
 .footer__inner-container-list-item {

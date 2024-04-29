@@ -31,5 +31,23 @@ Contributing
 
 # What can be improved
 
-The data can be improved to contain more funds that corresponds with what we have in the filters.
-Also the filters can be improved so we actually and narrow down the search results.
+## Data Enhancements
+
+Expand the data to include more funds that match the available filters
+
+## Filter Improvements
+
+Refine the filters to make them more intuitive and effective at narrowing results
+Add more filter options and improve filter labels and interactions
+Implement advanced filtering capabilities, like combining multiple filters
+
+## Responsive and Accessible Design
+
+Optimize the page for different device screens, from desktop to mobile
+Incorporate accessibility features for users with disabilities
+
+## Streamlined User Interface
+
+Break down components to reduce repetition
+Leverage a CSS preprocessor to organize styles more efficiently
+Refine the overall design and visual hierarchy
