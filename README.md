@@ -1,30 +1,35 @@
-# React + TypeScript + Vite
+# Product Finder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React-based web application that allows users to filter and search through a list of funds. The application features a header with a logo and navigation, a main content area with a filter section and a table displaying the fund data, and a footer with additional information.
 
-Currently, two official plugins are available:
+# Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Search functionality to filter funds by name
+Checkbox filters to select multiple options and filter funds accordingly
 
-## Expanding the ESLint configuration
+# Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+React.js
+CSS Modules for styling
+React Hooks (useState, useEffect)
+React + TypeScript + Vite
 
-- Configure the top-level `parserOptions` property like this:
+# Installation
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+Clone the repository: git clone https://github.com/your-username/product-finder.git
+Navigate to the project directory: cd product-finder
+Install dependencies: npm install
+Start the development server: npm start
+Open the application in your browser: http://localhost:3000
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+# Usage
+
+Use the search input to filter funds by name.
+Select one or more options from the checkboxes to filter funds based on the selected criteria.
+The table will automatically update to display the filtered funds.
+Contributing
+
+# What can be improved
+
+The data can be improved to contain more funds that corresponds with what we have in the filters.
+Also the filters can be improved so we actually and narrow down the search results.
