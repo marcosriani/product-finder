@@ -15,9 +15,7 @@ export type FilterOptionsProps = {
         }[];
       }[]
     | {
-        id: string;
         group: string;
-        tags?: string[];
         options: {
           id: string;
           value: string;

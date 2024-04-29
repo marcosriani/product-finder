@@ -56,9 +56,19 @@ const MainContent = () => {
         }
       });
 
-      setSelectedOptions([...selectedOptions, ...selectedValues]);
+      // Contains only unique strings without any repetitions,
+      const uniqueArray = [...new Set([...selectedOptions, ...selectedValues])];
+      setSelectedOptions(uniqueArray);
     } else {
-      setSelectedOptions(selectedOptions.filter((option) => option !== value));
+      const uncheckedValues = tagsArray
+        .filter((item) => (item.tags as string[]).includes(value))
+        .flatMap((item) => item.value);
+
+      setSelectedOptions(
+        selectedOptions.filter(
+          (option) => option !== value && !uncheckedValues.includes(option)
+        )
+      );
     }
   };
 
@@ -73,10 +83,13 @@ const MainContent = () => {
 
     if (selectedOptions.length > 0) {
       filteredData = filteredData.filter((fund) => {
-        return selectedOptions.every((option) =>
-          Object.values(fund).some(
-            (value) => value.toString().toLowerCase() === option.toLowerCase()
-          )
+        // If any of the selected options matches the selected checkbox
+        return selectedOptions.some((option) =>
+          Object.values(fund).some((value) => {
+            return (
+              value.split(' ').join('-').toLowerCase() === option.toLowerCase()
+            );
+          })
         );
       });
     }

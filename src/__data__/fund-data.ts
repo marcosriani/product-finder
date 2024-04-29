@@ -62,7 +62,7 @@ export const fundData = [
     ISN: 'IE00BT9PVG14',
     strategy: 'Thematic',
     asset_class: 'Equity',
-    region: 'Global',
+    region: 'Germany',
     style: 'Active',
   },
   {

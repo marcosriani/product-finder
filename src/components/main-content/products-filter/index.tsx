@@ -10,7 +10,7 @@ const ProductsFilter = ({
   selectedOptionsHandler,
 }: ProductsFilterProps) => {
   return (
-    <>
+    <div className={styles['products-filter']}>
       <h1 className={styles['product-filter-title']}>Product Finder</h1>
       <Search onSearch={onSearch} />
       <div className={styles['product-filter-container']}>
@@ -20,7 +20,7 @@ const ProductsFilter = ({
           selectedOptionsHandler={selectedOptionsHandler}
         />
       </div>
-    </>
+    </div>
   );
 };
 

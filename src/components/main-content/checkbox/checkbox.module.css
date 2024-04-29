@@ -41,13 +41,6 @@
   display: flex;
 }
 
-/* .checkbox-options.visible {
-  display: flex;
-} */
-/* .checkbox-options:not(:hover) {
-  display: none;
-} */
-
 .checkbox-options {
   background-color: #fff;
   border-radius: 2px;

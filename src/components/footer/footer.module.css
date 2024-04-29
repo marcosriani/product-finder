@@ -31,6 +31,10 @@
   height: 2.33rem;
 }
 
+.footer__inner-container-paragraph {
+  max-width: 80%;
+}
+
 .footer__inner-container-list {
   display: flex;
   align-items: center;
